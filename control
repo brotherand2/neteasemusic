@@ -1,0 +1,9 @@
+Package: com.netease.cloudmusic
+Name: neteasemusic
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: zyh
+Author: zyh
+Section: Tweaks
