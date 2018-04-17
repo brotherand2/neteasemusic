@@ -5,6 +5,7 @@
 增加设置UI,打开开关后,每次打开歌单,会对VIP的音乐获取播放地址,过几分钟后点击下载就能下载所有VIP音乐,不用播一次下载一次
 调用堆栈:
 下载音乐
+
 [NMPlayViewController downloadButtonClicked:]
 [NMPlayUIController downloadSong:
 [NMNewDownloadManager singleDownloadSong:collection:completeBlock:
@@ -13,6 +14,8 @@
 
 
 播放音乐
+
+
 [NMPlayListDetailViewController tableView:didSelectRowAtIndexPath:]
 [NMPlayListDetailViewController processTableViewCellSelectedInDefaultOrder:indexPath:]
 [NMPlayerManager playSongs:atIndex:collection:]
@@ -35,10 +38,12 @@ sub_10079C310
 
 
 下载全部歌曲
+
 [NMContentOperBar downloadButtonClicked]
 [ NMPlayListDetailViewController downloadButtonClicked
 
 获取播放地址
+
 [NMSongUrlInfoFixer _fixSongPlayUrlInfo: bitrate:192000 completeBlock:nil retryCount:3]
 
 
