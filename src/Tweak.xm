@@ -113,39 +113,5 @@ NSLog(@"%s",__func__);
 %end
 
 
-%hook NSBundle
--(NSString *)bundleIdentifier
-{
-    NSString *str=%orig;
 
-    NSArray *syms = [NSThread  callStackSymbols];
-
-    if ([syms count] > 1)
-    {
-        if( [[syms objectAtIndex:1] containsString:@"neteasemusic"]||[[syms objectAtIndex:1] containsString:@"robot"])
-        {
-            return @"com.netease.cloudmusic";
-        }
-
-    }
-    return str;
-}
--(NSDictionary*)infoDictionary
-{
-    NSDictionary*info=%orig;
-    NSArray *syms = [NSThread  callStackSymbols];
-
-    if ([syms count] > 1)
-    {
-        if( [[syms objectAtIndex:1] containsString:@"neteasemusic"]||[[syms objectAtIndex:1] containsString:@"robot"])
-        {
-            NSMutableDictionary *data=[info mutableCopy];
-            [data setObject:@"com.netease.cloudmusic" forKeyedSubscript:@"CFBundleIdentifier"];
-            return data;
-        }
-
-    }
-    return info;
-}
-%end
 
